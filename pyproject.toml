@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "hrs-py"
+version = "0.1.0"
+description = ""
+authors = ["Isto Nikula <isto.nikula@iki.fi>"]
+readme = "README.md"
+packages = [{include = "hrs_py", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
