@@ -4,11 +4,14 @@ version = "0.1.0"
 description = ""
 authors = ["Isto Nikula <isto.nikula@iki.fi>"]
 readme = "README.md"
-packages = [{include = "hrs_py", from = "src"}]
+packages = [{ include = "hrs_py", from = "src" }]
+
+[tool.poetry.scripts]
+hrs-py = "hrs_py.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-
+typer = { extras = ["all"], version = "^0.9.0" }
 
 [build-system]
 requires = ["poetry-core"]
