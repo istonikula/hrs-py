@@ -1,26 +1,14 @@
+from datetime import datetime
+from typing_extensions import Annotated
 import typer
 
 app = typer.Typer()
 
 
-@app.callback()
-def callback():
-    """
-    callback
-    """
-
-
 @app.command()
-def shoot():
-    """
-    shoot
-    """
-    typer.echo("Shooting portal gun")
-
-
-@app.command()
-def load():
-    """
-    load
-    """
-    typer.echo("Loading portal gun")
+def main(
+    file: Annotated[typer.FileText, typer.Argument()], date: Annotated[datetime, typer.Argument(formats=["%d.%m"])]
+):
+    print(f"file:{file.name} date:{date.day}.{date.month}")
+    for line in file:
+        print(f"line: {line}")
