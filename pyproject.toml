@@ -16,6 +16,7 @@ hrs-py = "hrs_py.main:app"
 [tool.poetry.dependencies]
 python = "^3.11"
 typer = { extras = ["all"], version = "^0.9.0" }
+termcolor = "^2.4.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.0.0"

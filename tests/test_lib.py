@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 from hrs_py.lib import find_and_collect_day
 
 
@@ -30,5 +30,5 @@ baz
     assert list(find_and_collect_day(lines(), __d("1.3"))) == ["1.3  day info", "--", "baz"]
 
 
-def __d(date: str):
-    return datetime.strptime(date, "%d.%m")
+def __d(date: str) -> date:
+    return datetime.strptime(date, "%d.%m").date()
